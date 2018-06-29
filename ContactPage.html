@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="peony.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center bg">
+    <h1>海城市牡丹园</h1>
+    <p>走进自然，放松心灵</p>
+</div>
+
+<div class="topnav" id="myTopnav">
+    <a href="index.html" >Home</a>
+    <a href="#pictures">Picture</a>
+    <a href="#news">News</a>
+    <a href="#service">Service</a>
+    <a href="ContactPage.html" class="active">Contact Us</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>营业时间</h3>
+
+            <ul id="ul">
+                <li id="1">星期一 ： 09：00 - 16：00 </li>
+                <li id="2">星期二 ： 09：00 - 16：00 </li>
+                <li id="3">星期三 ： 09：00 - 16：00 </li>
+                <li id="4">星期四 ： 08：00 - 17：00 </li>
+                <li id="5">星期五 ： 08：00 - 17：00 </li>
+                <li id="6">星期六 ： 08：00 - 17：00 </li>
+                <li id="7">星期日 ： 08：00 - 17：00 </li>
+            </ul>
+
+        </div>
+        <div class="col-sm-4">
+            <h3>地址</h3>
+            <p>辽宁省海城市小王屯海耿线</p>
+            <div id = "map" style="width:300px;height:300px;background:black"></div>
+        </div>
+        <div class="col-sm-4">
+            <h3>联系方式</h3>
+            <p>手机：13804123833</p>
+            <p>Wechat: Peony Garden</p>
+            <img src="qr%20code.png" alt="QR code">
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function myMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(40.8, 122.6),
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if(x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
+    var d = new Date();
+    var ul = document.getElementById("ul")
+    var listItem = ul.getElementsByTagName("li")
+
+    for (var i = 0; i <listItem.length; i++){
+        if (listItem[i].id == d.getDay().toString()) {
+            listItem[i].style.fontWeight = "bold";
+            listItem[i].style.fontSize="20px" ;
+        }
+    }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+</body>
+</html>
